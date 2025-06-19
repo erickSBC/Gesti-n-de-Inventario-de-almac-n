@@ -1,0 +1,46 @@
+
+.container {
+  padding: 20px;
+  background-color: #f9fafb;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.dashboard-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto auto;
+  gap: 20px;
+  max-width: 900px;   
+  width: 100%;
+}
+
+/* Estilo general para cada indicador */
+.indicator{
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 280px;        
+  font-size: 18px;
+  font-weight: bold;
+  color: #374151;
+  transition: transform 0.2s;
+  padding: 0;
+  border: 0.1px solid gray;
+
+}
+
+.indicator:hover {
+  transform: scale(1.02);
+}
+
+.indicator.wide {
+  grid-column: span 2;
+  height: 330px;
+}

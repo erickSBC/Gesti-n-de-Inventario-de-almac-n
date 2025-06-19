@@ -1,0 +1,32 @@
+<div class="container">
+    <app-pending-list></app-pending-list>
+     <section class="dashboard-container">
+    <div class="indicator">
+      <h4>Total de recepciones</h4>
+      <apx-chart 
+        [series]="chart1.series"
+        [chart]="chart1.chart"
+        [xaxis]="chart1.xaxis">
+      </apx-chart>
+    </div>
+
+    <div class="indicator">
+      <h4>Conformidad</h4>
+      <apx-chart 
+        [series]="chart2.series"
+        [chart]="chart2.chart"
+        [labels]="chart2.labels">
+      </apx-chart>
+    </div>
+
+
+    <div class="indicator wide">
+      <h4>Top 5 proveedores</h4>
+      <apx-chart 
+        [series]="chart3.series"
+        [chart]="chart3.chart"
+        [xaxis]="chart3.xaxis">
+      </apx-chart>
+    </div>
+  </section>
+</div>
