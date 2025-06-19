@@ -8,5 +8,22 @@ import { Component } from '@angular/core';
   styleUrl: './pending-list.component.css'
 })
 export class PendingListComponent {
+  modalVisible : boolean = false;
+  abrirModal() {
+    this.modalVisible = true;
+  }
 
+  cerrarModal() {
+    this.modalVisible = false;
+  }
+
+  confirmarRecepcion() {
+    alert('Recepción confirmada');
+    this.cerrarModal();
+  }
+
+  rechazarRecepcion() {
+    alert('Recepción rechazada');
+    this.cerrarModal();
+  }
 }

@@ -3,7 +3,7 @@
 <div class="container" id="container">
 	<div class="form-container sign-in-container">
 	
-		<form [formGroup]="form" >
+		<form [formGroup]="form" (ngSubmit)="submit()">
 			<h1>Iniciar sesion</h1>
 			<span>Ingresa tus datos</span>
 			<input type="email"  formControlName="email"  placeholder="Email" />
@@ -22,7 +22,7 @@
 			<div class="overlay-panel overlay-right">
 				<img src="assets/img/logo.png" alt="logo">
 				<h1>Bienvenido!</h1>
-				<button class="ghost" id="signUp">Crear cuenta</button>
+				<button class="ghost" id="signUp" (click)="create()">Crear cuenta</button>
 			</div>
 		</div>
 	</div>

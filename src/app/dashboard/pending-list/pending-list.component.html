@@ -1,7 +1,7 @@
 <div class="container">
-     <h2>Recepciones Pendientes</h2>
+  <h2>Recepciones Pendientes</h2>
 
-   <table  class="recepciones-table">
+  <table class="recepciones-table">
     <thead>
       <tr>
         <th>#</th>
@@ -10,8 +10,8 @@
         <th>Lote</th>
         <th>Fecha Ingreso</th>
         <th>Estado</th>
-        <th></th>
-        <th></th>
+        <th>Detalles</th>
+
       </tr>
     </thead>
     <tbody>
@@ -22,12 +22,34 @@
         <td>{{ 0}}</td>
         <td>{{ 0}}</td>
         <td><span class="badge pendiente">Pendiente</span></td>
-        <td><span class="mas">+</span></td>
-
-        
-
+        <td><span class="mas" (click)="abrirModal()">+</span></td>
+      </tr>
+      <tr>
+        <td>{{ 1 }}</td>
+        <td>{{ 1}}</td>
+        <td>{{ 1}}</td>
+        <td>{{ 1}}</td>
+        <td>{{ 1}}</td>
+        <td><span class="badge pendiente">Pendiente</span></td>
+        <td><span class="mas" (click)="abrirModal()">+</span></td>
       </tr>
     </tbody>
   </table>
 
 </div>
+
+@if(modalVisible){
+<div class="modal-backdrop"  (click)="cerrarModal()"></div>
+<div class="modal">
+  <h3>Detalles de Recepción</h3>
+  <p><strong>Proveedor:</strong>x</p>
+  <p><strong>Producto:</strong>x</p>
+  <p><strong>Lote:</strong> x</p>
+  <p><strong>Fecha Ingreso:</strong> x</p>
+
+  <div class="acciones">
+    <button class="btn confirmar" (click)="confirmarRecepcion()">Confirmar</button>
+    <button class="btn rechazar" (click)="rechazarRecepcion()">Rechazar</button>
+  </div>
+</div>
+}

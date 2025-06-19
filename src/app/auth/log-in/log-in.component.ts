@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, FormsModule, NgModel, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-log-in',
@@ -9,7 +10,8 @@ import { FormBuilder, FormControl, FormGroup, FormsModule, NgModel, ReactiveForm
   styleUrl: './log-in.component.css'
 })
 export class LogInComponent {
-  constructor(private formBuilder: FormBuilder){}
+  constructor(private formBuilder: FormBuilder,
+              private router: Router){}
   form!: FormGroup; 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
@@ -21,6 +23,26 @@ export class LogInComponent {
   }
 
   submit(){
+    const loginExitoso = true;
+    if (!loginExitoso) return;
+    switch (this.form.get('roleSelector')?.value) {
+      case 'Operario':
+        this.router.navigate(['/dashboard']);
+        break;
+      case 'Supervisor':
+        this.router.navigate(['/dashboard']);
+        break;
+      case 'Administrador':
+        this.router.navigate(['/dashboard']);
+        break;
+    
+      default:
+        break;
+    }
 
+
+  }
+  create(){
+    this.router.navigate(['/auth/sign-up'])
   }
 }

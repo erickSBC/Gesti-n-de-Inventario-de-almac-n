@@ -4,7 +4,10 @@
 			<form [formGroup]="form" >
 				<h1>Registrar</h1>
 				<span>Ingresa tus datos</span>
+				<input type="text"  formControlName="name"  placeholder="Nombre" />
+				<input type="text"  formControlName="lastname"  placeholder="Apellidos" />
 				<input type="email"  formControlName="email"  placeholder="Email" />
+				<input type="text"  formControlName="telephone"  placeholder="Telefono" />
 				<input type="password" formControlName="password" placeholder="Password" />
 				<select formControlName="roleSelector" >
 					<option  value="Operario" >Operario</option>
@@ -21,7 +24,7 @@
 				<div class="overlay-panel overlay-left">
 					<img src="assets/img/logo.png" alt="logo">
 					<h1>Bienvenido!</h1>
-					<button class="ghost" id="signUp">Inicia sesion</button>
+					<button class="ghost" id="signUp" (click)="goLogin()">Inicia sesion</button>
 				</div>
 			</div>
 		</div>
