@@ -43,6 +43,8 @@ export class LogInComponent {
 
   }
   create(){
-    this.router.navigate(['/auth/sign-up'])
+    setTimeout(() => {
+          this.router.navigate(['/auth/sign-up'])
+    }, 1000);
   }
 }

@@ -44,7 +44,9 @@ export class SignUpComponent {
     }
   }
   goLogin(){
-    this.router.navigate(['/auth/log-in'])
+    setTimeout(() => {
+          this.router.navigate(['/auth/log-in'])
 
+    }, 1000);
   }
 }

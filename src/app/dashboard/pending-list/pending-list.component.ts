@@ -17,7 +17,7 @@ export class PendingListComponent {
     this.modalVisible = false;
   }
 
-  confirmarRecepcion() {
+  aprobarRecepcion() {
     alert('Recepción confirmada');
     this.cerrarModal();
   }
