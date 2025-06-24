@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, FormsModule, NgModel, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-log-in',
@@ -11,7 +12,8 @@ import { Router } from '@angular/router';
 })
 export class LogInComponent {
   constructor(private formBuilder: FormBuilder,
-              private router: Router){}
+              private router: Router,
+              private authService: AuthService){}
   form!: FormGroup; 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
@@ -23,8 +25,16 @@ export class LogInComponent {
   }
 
   submit(){
-    const loginExitoso = true;
-    if (!loginExitoso) return;
+    /*if (this.form.valid) {
+      this.auth.login(this.form.value).subscribe({
+        next: (res) => {
+          this.auth.saveToken(res.token);
+          this.router.navigate(['/dashboard']); // o ruta protegida
+        },
+        error: () => alert('Credenciales inválidas')
+      });
+    }*/
+    this.authService.authenticated = true;
     switch (this.form.get('roleSelector')?.value) {
       case 'Operario':
         this.router.navigate(['/dashboard']);

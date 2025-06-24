@@ -1,12 +1,14 @@
-<header class="main-header">
-  <div class="logo-container">
-    <img src="assets/img/logo.png" alt="Logo" class="logo-img" />
-    <span class="company-name">LogiCentro</span>
-  </div>
-  <div class="user-profile">
-    <span class="username">Juan Pérez</span>
-    <img src="assets/img/perfil.png" alt="Perfil" class="profile-pic" />
-  </div>
-</header>
+@if (logueado()) {
+  <header class="main-header">
+    <div class="logo-container">
+      <img src="assets/img/logo.png" alt="Logo" class="logo-img" />
+      <span class="company-name">LogiCentro</span>
+    </div>
+    <div class="user-profile">
+      <span class="username">Juan Pérez</span>
+      <img src="assets/img/perfil.png" alt="Perfil" class="profile-pic" />
+    </div>
+  </header>
+}
 
 <router-outlet />

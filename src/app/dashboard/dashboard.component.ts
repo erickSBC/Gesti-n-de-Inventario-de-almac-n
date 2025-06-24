@@ -1,15 +1,19 @@
 import { Component } from '@angular/core';
 import { PendingListComponent } from './pending-list/pending-list.component';
 import { ChartType, NgApexchartsModule } from 'ng-apexcharts';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [PendingListComponent, NgApexchartsModule],
+  imports: [PendingListComponent, NgApexchartsModule,RouterLink, RouterOutlet],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent {
+  constructor(){
+  
+  }
   chart1 = {
     series: [{ name: 'Recepciones', data: [10, 20, 15, 30, 40] }],
     chart: { type: 'bar' as ChartType, height: 200, width: 350 },
